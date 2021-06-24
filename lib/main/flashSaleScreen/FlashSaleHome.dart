@@ -1,31 +1,24 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:shopping_app/main/AppBody.dart';
+import 'package:shopping_app/main/flashSaleScreen/FlashSaleBody.dart';
 import 'package:shopping_app/variables.dart';
 
-class HomeScreen extends StatefulWidget {
+class FlashSaleHomeView extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _FlashSaleHomeViewState createState() => _FlashSaleHomeViewState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _FlashSaleHomeViewState extends State<FlashSaleHomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Theme(
-          data: Theme.of(context).copyWith(
-              // Set the transparency here
-              canvasColor: PrimColo.withOpacity(0.9)
-              // Colors
-              //  .transparent, //or any other color you want. e.g Colors.blue.withOpacity(0.5)
-              ),
+          data: Theme.of(context)
+              .copyWith(canvasColor: FadePrimaColo.withOpacity(0.9)),
           child: sideNav()),
-      //  body: Text('Hello Body'),
       appBar: AppBar(
         toolbarHeight: 75.0,
         title: Text(
-          "Trending",
+          "Flash Sale",
           style: TextStyle(
               fontFamily: 'Cairo',
               fontSize: 25,
@@ -41,10 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(padding: EdgeInsets.only(right: 20)),
         ],
       ),
-      body: Container(
-        margin: EdgeInsets.only(right: 8.0, left: 8.0),
-        child: AppBody(),
-      ),
+      body: FlashSaleBody(),
     );
   }
 }

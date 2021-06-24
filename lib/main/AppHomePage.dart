@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/accessories/screens/AccessoriesHomePage.dart';
-import 'package:shopping_app/auth/AuthHome.dart';
 import 'package:shopping_app/laptop/screens/LaptopHomePage.dart';
 import 'package:shopping_app/main/HomeScreen.dart';
+import 'package:shopping_app/main/flashSaleScreen/FlashSaleHome.dart';
+import 'package:shopping_app/variables.dart';
 
 class AppHomePageScreen extends StatefulWidget {
   @override
@@ -13,45 +13,54 @@ class _AppHomePageScreenState extends State<AppHomePageScreen> {
   int page = 0;
   List pageOptions = [
     HomeScreen(),
-    LaptopHomePageScreen(),
-    AccessoriesHomePage(),
-    AuthPageScreen()
+    FlashSaleHomeView(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[250],
+      // resizeToAvoidBottomPadding: false,
+      //  backgroundColor: Colors.grey[250],
       //bottom navigation bar
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedItemColor: Colors.black,
-        selectedLabelStyle: TextStyle(color: Colors.black),
-        unselectedItemColor: Colors.grey,
-        unselectedLabelStyle: TextStyle(color: Colors.grey),
-        currentIndex: page,
-        onTap: (index) {
-          setState(() {
-            page = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            label: "",
-            icon: Icon(Icons.home_outlined, size: 32),
-          ),
-          BottomNavigationBarItem(
-            label: "",
-            icon: Icon(Icons.laptop_chromebook, size: 32),
-          ),
-          BottomNavigationBarItem(
-            label: "",
-            icon: Icon(Icons.shopping_bag_outlined, size: 32),
-          ),
-          BottomNavigationBarItem(
-            label: "",
-            icon: Icon(Icons.person_outline_outlined, size: 32),
-          ),
-        ],
+
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(7.0),
+          topRight: Radius.circular(7.0),
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: PrimColo,
+          selectedItemColor: Colors.white,
+          selectedLabelStyle: TextStyle(color: Colors.white),
+          unselectedItemColor: Colors.white30,
+          unselectedLabelStyle: TextStyle(color: Colors.white30),
+          currentIndex: page,
+          onTap: (index) {
+            setState(() {
+              page = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              label: "",
+              icon: SizedBox(
+                child: Icon(
+                  Icons.home,
+                  size: 35,
+                ),
+                height: 25,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: "",
+              icon: SizedBox(
+                child: Icon(Icons.local_fire_department_outlined, size: 35),
+                height: 25,
+              ),
+            ),
+          ],
+        ),
       ),
       body: pageOptions[page],
     );

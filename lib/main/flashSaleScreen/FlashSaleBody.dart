@@ -1,36 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/slideview/bannerSilde/BannerSlide.dart';
-import 'package:shopping_app/slideview/subSlides/LaptopSlide.dart';
+import 'package:shopping_app/main/flashSaleScreen/FavSeparator.dart';
+import 'package:shopping_app/main/flashSaleScreen/FlashSaleBanner.dart';
 import 'package:shopping_app/slideview/subSlides/ShopMoreView.dart';
 import 'package:shopping_app/variables.dart';
 
-class AppBody extends StatefulWidget {
+class FlashSaleBody extends StatefulWidget {
   @override
-  _AppBodyState createState() => _AppBodyState();
+  _FlashSaleBodyState createState() => _FlashSaleBodyState();
 }
 
-class _AppBodyState extends State<AppBody> with SingleTickerProviderStateMixin {
+class _FlashSaleBodyState extends State<FlashSaleBody> {
   @override
   Widget build(BuildContext context) {
     return Container(
         child: CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height / 4.23,
-            child: ListView.builder(
-                itemExtent: MediaQuery.of(context).size.width,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => Container(
-                      // color: Colors.blue,
-                      margin: EdgeInsets.only(top: 5.0, right: 25.0, left: 5.0),
-                      //  color: Colors.orangeAccent,
-                      // padding: EdgeInsets.only(bottom: 10),
-                      child: LaptopSlideView(),
-                    ),
-                itemCount: 1),
-          ),
-        ),
         SliverToBoxAdapter(
           child: SizedBox(
             height: MediaQuery.of(context).size.height / 3.5,
@@ -40,11 +24,18 @@ class _AppBodyState extends State<AppBody> with SingleTickerProviderStateMixin {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Container(
                       //  color: Colors.black,
-                      margin: EdgeInsets.only(right: 15.0),
+                      //  margin: EdgeInsets.only(top: 5.0),
                       //  color: Colors.orangeAccent,
-                      child: BannerSlideView(),
+                      child: FlashSaleBannerSlide(),
                     ),
                 itemCount: 1),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height / 11.5,
+            width: MediaQuery.of(context).size.width,
+            child: FavBar(),
           ),
         ),
         SliverPadding(
@@ -52,8 +43,8 @@ class _AppBodyState extends State<AppBody> with SingleTickerProviderStateMixin {
           sliver: SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              crossAxisSpacing: 9.0,
-              mainAxisSpacing: 9.0,
+              crossAxisSpacing: 2.0,
+              mainAxisSpacing: 5.0,
               childAspectRatio: 0.7,
             ),
             delegate: SliverChildBuilderDelegate(
@@ -93,7 +84,7 @@ class _AppBodyState extends State<AppBody> with SingleTickerProviderStateMixin {
                                   height: 2,
                                 ),
                                 Text(
-                                  '\$9999',
+                                  '$i% OFF',
                                   style: TextStyle(
                                       fontFamily: PrimTxt,
                                       fontWeight: FontWeight.w400,
