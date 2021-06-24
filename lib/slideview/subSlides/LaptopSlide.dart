@@ -26,6 +26,8 @@ class _LaptopSlideViewState extends State<LaptopSlideView> {
                 child: Row(
                   children: [
                     Container(
+                      // color: Colors.green,
+                      height: 180,
                       padding: EdgeInsets.only(right: 9),
                       child: Card(
                         elevation: 4.0,
@@ -33,6 +35,7 @@ class _LaptopSlideViewState extends State<LaptopSlideView> {
                             child: Column(
                           children: [
                             Container(
+                              //color: Colors.blue,
                               // decoration: BoxDecoration(
                               //     // borderRadius: BorderRadius.circular(8),
                               //     // border: Border.all(color: Colors.blueAccent),
@@ -40,7 +43,7 @@ class _LaptopSlideViewState extends State<LaptopSlideView> {
                               //   bottom:
                               //       BorderSide(width: 1.0, color: Colors.grey),
                               // )),
-                              height: MediaQuery.of(context).size.height / 6.7,
+                              height: MediaQuery.of(context).size.height / 7.8,
                               width: MediaQuery.of(context).size.width / 3.3,
                               padding: EdgeInsets.all(5.0),
                               //color: Colors.green,
@@ -51,8 +54,8 @@ class _LaptopSlideViewState extends State<LaptopSlideView> {
                               ),
                             ),
                             Container(
-                              width: MediaQuery.of(context).size.width / 3.28,
-                              height: MediaQuery.of(context).size.height / 19.5,
+                              // width: MediaQuery.of(context).size.width / 3.28,
+                              // height: MediaQuery.of(context).size.height / 19.5,
                               color: Colors.white70,
                               child: Column(
                                 children: [
@@ -64,7 +67,7 @@ class _LaptopSlideViewState extends State<LaptopSlideView> {
                                         fontSize: 13),
                                   ),
                                   SizedBox(
-                                    height: 2,
+                                    height: 0,
                                   ),
                                   Text(
                                     '\$9999',
@@ -92,8 +95,8 @@ class _LaptopSlideViewState extends State<LaptopSlideView> {
                           children: [
                             Container(
                               padding: EdgeInsets.all(5.0),
-                              height: MediaQuery.of(context).size.height / 7,
-                              width: MediaQuery.of(context).size.width / 3.5,
+                              height: MediaQuery.of(context).size.height / 6.7,
+                              width: MediaQuery.of(context).size.width / 3.3,
                               //color: Colors.green,
                               child: Image.asset(
                                 products[1].image,
@@ -102,8 +105,8 @@ class _LaptopSlideViewState extends State<LaptopSlideView> {
                               ),
                             ),
                             Container(
-                              width: MediaQuery.of(context).size.width / 3.28,
-                              height: MediaQuery.of(context).size.height / 19.5,
+                              // width: MediaQuery.of(context).size.width / 3.28,
+                              // height: MediaQuery.of(context).size.height / 19.5,
                               //  color: Colors.grey[200],
                               child: Column(
                                 children: [
@@ -152,8 +155,8 @@ class _LaptopSlideViewState extends State<LaptopSlideView> {
                               ),
                             ),
                             Container(
-                              width: MediaQuery.of(context).size.width / 3.28,
-                              height: MediaQuery.of(context).size.height / 19.5,
+                              // width: MediaQuery.of(context).size.width / 3.28,
+                              // height: MediaQuery.of(context).size.height / 19.5,
                               //  color: Colors.grey[200],
                               child: Column(
                                 children: [
